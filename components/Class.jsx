@@ -83,6 +83,9 @@ export default function Class() {
               </div>
             </div>
           </div>
+        <center>
+          <a href="/canciones" className="btn custom-btn bg-color text-center mt-4" style={{ width: '90% !important', margin: 'auto' }} data-aos="fade-up" data-aos-delay={300} data-toggle="modal">Mas Canciones</a>
+        </center>
         </div>
       </section>
     </>

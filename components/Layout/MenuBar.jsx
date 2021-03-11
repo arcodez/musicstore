@@ -1,8 +1,30 @@
 import React from "react";
+import Head from "next/head";
 
 export default function MenuBar() {
   return (
     <>
+      <Head>
+        <title>Porti Music Store</title>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" content />
+        <meta name="keywords" content />
+        <meta name="author" content />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/css/aos.css" />
+        {/* MAIN css */}
+        <link rel="stylesheet" href="/css/tooplate-gymso-style.css" />
+        {/*
+      Tooplate 2119 Gymso Fitness
+      https://www.tooplate.com/view/2119-gymso-fitness
+      */}
+      </Head>
       {/* MENU BAR */}
       <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container">
@@ -23,27 +45,27 @@ export default function MenuBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-lg-auto">
               <li className="nav-item">
-                <a href="#home" className="nav-link smoothScroll">
+                <a href="/#home" className="nav-link smoothScroll">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#about" className="nav-link smoothScroll">
+                <a href="/#about" className="nav-link smoothScroll">
                   About Us
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#class" className="nav-link smoothScroll">
+                <a href="/#class" className="nav-link smoothScroll">
                   Songs
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#schedule" className="nav-link smoothScroll">
+                <a href="/#schedule" className="nav-link smoothScroll">
                   Horarios
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#contact" className="nav-link smoothScroll">
+                <a href="/#contact" className="nav-link smoothScroll">
                   Contact
                 </a>
               </li>

@@ -20,12 +20,19 @@ export default function Footer() {
                 <a href="#">hello@company.co</a>
               </p>
               <p>
-                <i className="fa fa-phone mr-1" /> 010-020-0840
+                <a href="tel:+010-020-0840"><i className="fa fa-phone mr-1" /> 010-020-0840</a>
               </p>
             </div>
           </div>
         </div>
       </footer>
+      {/* SCRIPTS */}
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/aos.js"></script>
+      <script src="/js/smoothscroll.js"></script>
+      <script src="/js/custom.js"></script>
     </>
   );
 }
