@@ -8,9 +8,9 @@ export default function MenuBar() {
         <title>Porti Music Store</title>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" content />
-        <meta name="keywords" content />
-        <meta name="author" content />
+        <meta name="description" content="La Mejor Tienda de Canciones Que Hay"/>
+        <meta name="keywords" />
+        <meta name="author" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
