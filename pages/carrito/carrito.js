@@ -24,7 +24,6 @@ function carrito({ productos }) {
     }
 
     const [agregrar, setAgregar] = useState(0)
-    const [cantidad, setCantidad] = useState(0)
     var productoCantidad = 0
     return (
         <Layout>
