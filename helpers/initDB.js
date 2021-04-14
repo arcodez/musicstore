@@ -19,4 +19,4 @@ function initDB(){
     })
 }
 
-export default initDB
+export default initDB;
