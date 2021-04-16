@@ -2,7 +2,7 @@ import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
 
 function products() {
   return (
-    <LayoutMenu>
+    <LayoutMenu> 
       <div className="container mt-5">
         <div className="row tm-content-row">
           <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
