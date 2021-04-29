@@ -4,7 +4,7 @@ export default function (req, res) {
       response = req.body;
       res.json(response)
       //res.send("Los datos han sido Actualizados")
-      //console.log(response, "Los datos han sido Borrados");
+      console.log(response, "Los datos han sido Actualizados");
       //res.redirect("/");
     } else {
       console.log("Los datos no han sido tomados");

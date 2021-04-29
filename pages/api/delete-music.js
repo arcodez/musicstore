@@ -3,7 +3,7 @@ export default function (req, res) {
       let response = {};
       response = req.body;
       //res.json(response)
-      res.send("Los datos han sido borrados")
+      console.log("Los datos han sido borrados")
       //console.log(response, "Los datos han sido Borrados");
       //res.redirect("/");
     } else {
