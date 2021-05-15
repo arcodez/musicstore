@@ -1,6 +1,6 @@
 import React from "react";
-import Class from "../components/Class";
-import Layout from "../components/Layout/Layout";
+import Class from "../../components/Class";
+import Layout from "../../components/Layout/Layout";
 
 export const getStaticProps = async () => {
   try {
@@ -51,6 +51,7 @@ function canciones({ musicas }) {
                       <span>
                         <strong>Produced by</strong> - Alejandro Portillo
                       </span>
+                      <a href={`/musica/${musica._id}`} className="btn btn-success">Comprar</a>
                     </div>
                   </div>
                 </div>
@@ -58,7 +59,7 @@ function canciones({ musicas }) {
             </div>
           </div>
         </section>
-        <Class />
+        {/* <Class /> */}
       </div>
     </Layout>
   );
