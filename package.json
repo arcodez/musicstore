@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "axios-hook": "^0.0.6",
+    "isomorphic-unfetch": "^3.1.0",
     "mongoose": "^5.11.19",
     "next": "10.0.7",
     "react": "17.0.1",

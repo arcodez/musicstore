@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout";
 export const getStaticProps = async () => {
   try {
     const res = await fetch("http://localhost:3000/api/products");
-    const data = await res.json();
+    const { data } = await res.json();
     return {
       props: { musicas: data },
     };
@@ -31,6 +31,7 @@ function canciones({ musicas }) {
               {/* Hay que remplazar los datos del map por props */}
               {musicas.map((musica) => (
                 <div
+                  key={musica._id}
                   className="mt-5 mt-lg-0 mt-md-0 col-lg-4 col-md-6 col-12"
                   data-aos="fade-up"
                   data-aos-delay={500}
@@ -51,7 +52,12 @@ function canciones({ musicas }) {
                       <span>
                         <strong>Produced by</strong> - Alejandro Portillo
                       </span>
-                      <a href={`/musica/${musica._id}`} className="btn btn-success">Comprar</a>
+                      <a
+                        href={`/musica/${musica._id}`}
+                        className="btn btn-success"
+                      >
+                        Comprar
+                      </a>
                     </div>
                   </div>
                 </div>
