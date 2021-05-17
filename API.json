@@ -1,4 +1,8 @@
-[{
-    "fname": "Abel",
-    "lname":"Rodriguez"
-}]
+[
+  {
+    "name": "En la soledad",
+    "autor": "Alvin",
+    "duration": 3,
+    "album": "Canciones"
+  }
+]
