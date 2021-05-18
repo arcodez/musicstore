@@ -19,9 +19,9 @@ function New() {
     }
   }, [errors]);
 
-  const createNote = () => {
+  const createNote = async () => {
     try {
-      fetch("http://localhost:3000/api/musica/", {
+     await fetch("http://localhost:3000/api/musica/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

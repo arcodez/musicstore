@@ -25,9 +25,9 @@ function EditMusic({ music }) {
     }
   }, [errors]);
 
-  const updateMusic = () => {
+  const updateMusic = async () => {
     try {
-      fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
+      await fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
