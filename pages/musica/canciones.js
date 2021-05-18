@@ -1,6 +1,7 @@
 import React from "react";
+import Class from "../../components/Class";
 import Layout from "../../components/Layout/Layout";
-import Link from "next/link";
+import Link from "next/router";
 
 export const getStaticProps = async () => {
   try {
@@ -36,10 +37,10 @@ function canciones({ musicas }) {
                   data-aos="fade-up"
                   data-aos-delay={500}
                 >
-                  <Link href={`/musica/${musica._id}`}>
-                    <a>
-                      <h1>{musica.name}</h1>
-                    </a>
+                  <Link href={`musica/${musica._id}`}>
+                      <a>
+                          <h1>{musica.name}</h1>
+                      </a>
                   </Link>
                   <div className="class-thumb">
                     <img
@@ -56,11 +57,6 @@ function canciones({ musicas }) {
                       <span>
                         <strong>Produced by</strong> - Alejandro Portillo
                       </span>
-                      <Link href={`/musica/${musica._id}/edit`}>
-                        <a>
-                          <button>Edit</button>
-                        </a>
-                      </Link>
                       <a
                         href={`/musica/${musica._id}`}
                         className="btn btn-success"
@@ -74,6 +70,7 @@ function canciones({ musicas }) {
             </div>
           </div>
         </section>
+        {/* <Class /> */}
       </div>
     </Layout>
   );

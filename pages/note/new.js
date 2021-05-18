@@ -13,7 +13,6 @@ function New() {
       if (Object.keys(errors).length === 0) {
         createNote();
         console.log(form)
-        //alert("Sucess");
       } else {
         setIsSubmitting(false);
       }

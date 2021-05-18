@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { useRouter } from "next/router";
 
-function New() {
-  const [form, setForm] = useState({ name: "", autor: "", duration: 0, album: ""});
+function EditMusic({ music }) {
+  const [form, setForm] = useState({
+    duration: music.duration,
+    album: music.album,
+    name: music.name,
+    autor: music.autor,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
@@ -11,18 +16,19 @@ function New() {
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
-        createNote();
+        updateMusic();
         console.log(form);
+        //alert("Sucess");
       } else {
         setIsSubmitting(false);
       }
     }
   }, [errors]);
 
-  const createNote = () => {
+  const updateMusic = () => {
     try {
-      fetch("http://localhost:3000/api/musica/", {
-        method: "POST",
+      fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -51,21 +57,21 @@ function New() {
   const validate = () => {
     let err = {};
     if (!form.name) {
-      setForm("");
-      err.title = "Title is required";
-      alert(err.title);
+      setForm({ autor: "" });
+      err.name = "Name is required";
+      alert(err.name);
     }
-    if (!form.duration) {
-      setForm("");
-      err.description = "Duration is not defined";
-      alert(err.description);
+    if (!form.autor) {
+      setForm({ name: "" });
+      err.autor = "Autor is required";
+      alert(err.autor);
     }
     return err;
   };
 
   return (
     <center>
-      <h1>Crear Nota</h1>
+      <h1>Actulizar Musica</h1>
       <div>
         {isSubmitting ? (
           <p>Loading...</p>
@@ -73,35 +79,21 @@ function New() {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Name"
-              label="name"
+              placeholder="Title"
+              label="Title"
               name="name"
-              onChange={handleChange}
-            />{" "}
-            <input
-              type="text"
-              placeholder="Album"
-              label="album"
-              name="album"
-              onChange={handleChange}
-            />{" "}
-            <input
-              type="text"
-              placeholder="Duration"
-              label="duration"
-              name="duration"
-              onChange={handleChange}
-            />{" "}
-            <input
-              type="text"
-              placeholder="Autor"
-              label="autor"
-              name="autor"
+              value={form.name}
               onChange={handleChange}
             />
             <br />
-            
-            <button type="submit">Create</button>
+            <textarea
+              name="autor"
+              label="Description"
+              placeholder="Description"
+              value={form.autor}
+              onChange={handleChange}
+            ></textarea>
+            <button type="submit">Update</button>
           </form>
         )}
       </div>
@@ -109,4 +101,10 @@ function New() {
   );
 }
 
-export default New;
+EditMusic.getInitialProps = async ({ query: { id } }) => {
+  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const { data } = await res.json();
+  return { music: data };
+};
+
+export default EditMusic;
