@@ -9,6 +9,7 @@ function EditMusic({ music }) {
     name: music.name,
     autor: music.autor,
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
   const router = useRouter();
