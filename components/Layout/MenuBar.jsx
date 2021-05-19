@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 export default function MenuBar() {
   return (
@@ -8,7 +9,10 @@ export default function MenuBar() {
         <title>Porti Music Store</title>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" content="La Mejor Tienda de Canciones Que Hay"/>
+        <meta
+          name="description"
+          content="La Mejor Tienda de Canciones Que Hay"
+        />
         <meta name="keywords" />
         <meta name="author" />
         <meta
@@ -28,9 +32,9 @@ export default function MenuBar() {
       {/* MENU BAR */}
       <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="index.html">
-            Porti Music Store
-          </a>
+          <Link href="/">
+            <a className="navbar-brand">Porti Music Store</a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -45,40 +49,46 @@ export default function MenuBar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-lg-auto">
               <li className="nav-item">
-                <a href="/#home" className="nav-link smoothScroll">
-                  Home
-                </a>
+                <Link href="/#home">
+                  <a className="nav-link smoothScroll">Home</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/#about" className="nav-link smoothScroll">
-                  About Us
-                </a>
+                <Link href="/#about">
+                  <a className="nav-link smoothScroll">About Us</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/#class" className="nav-link smoothScroll">
-                  Songs
-                </a>
+                <Link href="/#class">
+                  <a className="nav-link smoothScroll">Songs</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/#schedule" className="nav-link smoothScroll">
-                  Horarios
-                </a>
+                <Link href="/#schedule">
+                  <a className="nav-link smoothScroll">Horarios</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="/#contact" className="nav-link smoothScroll">
-                  Contact
-                </a>
+                <Link href="/#contact">
+                  <a className="nav-link smoothScroll">Contact</a>
+                </Link>
               </li>
             </ul>
             <ul className="social-icon ml-lg-3">
               <li>
-                <a href="#" className="fa fa-facebook" />
+                <Link href="#">
+                  <a className="fa fa-facebook" />
+                </Link>
               </li>
               <li>
-                <a href="#" className="fa fa-twitter" />
+                <Link href="#">
+                  <a className="fa fa-twitter" />
+                </Link>
               </li>
               <li>
-                <a href="#" className="fa fa-instagram" />
+                <Link href="#">
+                  <a className="fa fa-instagram" />
+                </Link>
               </li>
             </ul>
           </div>

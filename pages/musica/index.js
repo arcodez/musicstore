@@ -22,8 +22,8 @@ function canciones({ musicas }) {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-12 text-center mb-5">
-                <h6 data-aos="fade-up">Get A Perfect Song</h6>
-                <h2 data-aos="fade-up" data-aos-delay={200}>
+                <h6>Get A Perfect Song</h6>
+                <h2>
                   My Songs
                 </h2>
               </div>
@@ -33,8 +33,6 @@ function canciones({ musicas }) {
                 <div
                   key={musica._id}
                   className="mt-5 mt-lg-0 mt-md-0 col-lg-4 col-md-6 col-12"
-                  data-aos="fade-up"
-                  data-aos-delay={500}
                 >
                   <Link href={`/musica/${musica._id}`}>
                     <a>

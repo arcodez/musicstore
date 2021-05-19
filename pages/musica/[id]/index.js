@@ -23,6 +23,7 @@ function Music({ musica }) {
       <h1>{musica.name}</h1>
       <h3>{musica.autor}</h3>
       <button onClick={deletedMusic}>Delete</button>
+      <button onClick={() => router.push("/musica")}>Ver Mas Canciones</button>
     </div>
   );
 }
