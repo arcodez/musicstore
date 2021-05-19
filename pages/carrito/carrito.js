@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/Layout/Layout'
-import { TemplateCard, TemplateCarrito, TemplateFooter } from './TemplatesC'
+// import { TemplateCard, TemplateCarrito, TemplateFooter } from './TemplatesC'
 
 export const getStaticProps = async () => {
     const res = await fetch('http://localhost:3000/api/products')

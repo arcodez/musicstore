@@ -59,5 +59,5 @@ function TemplateFooter() {
     )
 }
 
-export { TemplateCard, TemplateCarrito, TemplateFooter }
-export default { TemplateCard, TemplateCarrito, TemplateFooter }
+/* export { TemplateCard, TemplateCarrito, TemplateFooter }
+export default { TemplateCard, TemplateCarrito, TemplateFooter } */
