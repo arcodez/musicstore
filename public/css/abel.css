@@ -1,5 +1,4 @@
-.columns {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(3,33%);
+.container .pagar img {
+    width: 100%;
+    border-radius: 10px;
 }

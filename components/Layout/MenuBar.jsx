@@ -22,6 +22,7 @@ export default function MenuBar() {
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/font-awesome.min.css" />
         <link rel="stylesheet" href="/css/aos.css" />
+        <link rel="stylesheet" href="/css/abel.css" />
         {/* MAIN css */}
         <link rel="stylesheet" href="/css/tooplate-gymso-style.css" />
         {/*
