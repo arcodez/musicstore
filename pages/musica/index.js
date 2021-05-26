@@ -23,9 +23,7 @@ function canciones({ musicas }) {
             <div className="row">
               <div className="col-lg-12 col-12 text-center mb-5">
                 <h6>Get A Perfect Song</h6>
-                <h2>
-                  My Songs
-                </h2>
+                <h2>My Songs</h2>
               </div>
               {/* Llamar a las canciones desde la base de datos */}
               {/* Hay que remplazar los datos del map por props */}

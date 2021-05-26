@@ -74,7 +74,7 @@ function Music({ musica }) {
         <div style={{ width: "50%" }}>
           <PaypalNoSSR
             price={musica.price}
-            handlePaySuccesfully={()=> handlePaySuccesfully()}
+            handlePaySuccesfully={() => handlePaySuccesfully()}
           />
         </div>
         <button
@@ -82,6 +82,9 @@ function Music({ musica }) {
           onClick={() => router.push("/musica")}
         >
           Ver Mas Canciones
+        </button>
+        <button className="btn btn-btn-danger" onClick={() => deletedMusic()}>
+          Delete Music
         </button>
       </div>
     </Layout>

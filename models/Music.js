@@ -11,7 +11,7 @@ const MusicSchema = new mongoose.Schema({
   },
   price: {
     type: String,
-    required: true,
+    required: false,
   },
   album: {
     type: String,
@@ -19,15 +19,15 @@ const MusicSchema = new mongoose.Schema({
   },
   audioUrl: {
     type: String,
-    required: true,
+    required: false,
   },
   audioUrlCompleto: {
     type: String,
-    required: true,
+    required: false,
   },
   imageUrl: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
