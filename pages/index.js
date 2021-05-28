@@ -8,6 +8,7 @@ import Modal from "../components/Modal";
 import Hero from "../components/Hero";
 
 export default function index() {
+  console.log("Succesfully");
   return (
     <Layout>
       <Hero />
