@@ -5,12 +5,11 @@ export default function MenuBar() {
   return (
     <>
       <Head>
-        <title>Product Admin - Dashboard HTML Template</title>
+        <title> Music Admin - Dashboard</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:400,700"
         />
-        {/* https://fonts.google.com/specimen/Roboto */}
         <link rel="stylesheet" href="/menu/css/fontawesome.min.css" />
         <link
           rel="stylesheet"
@@ -19,20 +18,15 @@ export default function MenuBar() {
         />
         <link rel="stylesheet" href="css/fontawesome.min.css" />
 
-        {/* https://fontawesome.com/ */}
         <link rel="stylesheet" href="/menu/css/bootstrap.min.css" />
         {/* https://getbootstrap.com/ */}
         <link rel="stylesheet" href="/menu/css/templatemo-style.css" />
-        {/*
-              Product Admin CSS Template
-              https://templatemo.com/tm-524-product-admin
-              */}
       </Head>
       <div className id="home">
         <nav className="navbar navbar-expand-xl">
           <div className="container h-100">
-            <a className="navbar-brand" href="index.html">
-              <h1 className="tm-site-title mb-0">Product Admin</h1>
+            <a className="navbar-brand" href="/menu">
+              <h1 className="tm-site-title mb-0">Music Admin</h1>
             </a>
             <button
               className="navbar-toggler ml-auto mr-0"
@@ -88,13 +82,13 @@ export default function MenuBar() {
                   </div>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="products.html">
+                  <a className="nav-link" href="/menu/products">
                     <i className="fas fa-shopping-cart" />
                     Products
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="accounts.html">
+                  <a className="nav-link" href="/menu/accounts">
                     <i className="far fa-user" />
                     Accounts
                   </a>
@@ -111,8 +105,7 @@ export default function MenuBar() {
                   >
                     <i className="fas fa-cog" />
                     <span>
-                      {" "}
-                      Settings <i className="fas fa-angle-down" />{" "}
+                      Settings <i className="fas fa-angle-down" />
                     </span>
                   </a>
                   <div
@@ -133,7 +126,7 @@ export default function MenuBar() {
               </ul>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link d-block" href="login.html">
+                  <a className="nav-link d-block" href="/menu/login">
                     Admin, <b>Logout</b>
                   </a>
                 </li>

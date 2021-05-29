@@ -1,74 +1,15 @@
-import React, { useState, useEffect } from "react";
+import useHandleMusic from "../../../hooks/useHandleMusic";
 import fetch from "isomorphic-unfetch";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
 function EditMusic({ music }) {
   const [form, setForm] = useState({
-    duration: music.duration,
     album: music.album,
     name: music.name,
     autor: music.autor,
   });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errors, setErrors] = useState({});
-  const router = useRouter();
 
-  useEffect(() => {
-    if (isSubmitting) {
-      if (Object.keys(errors).length === 0) {
-        updateMusic();
-        console.log(form);
-        //alert("Sucess");
-      } else {
-        setIsSubmitting(false);
-      }
-    }
-  }, [errors]);
-
-  const updateMusic = async () => {
-    try {
-      await fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-      router.push("/musica");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let errs = validate();
-    setErrors(errs);
-    setIsSubmitting(true);
-    console.log(errors);
-  };
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const validate = () => {
-    let err = {};
-    if (!form.name) {
-      setForm({ autor: "" });
-      err.name = "Name is required";
-      alert(err.name);
-    }
-    if (!form.autor) {
-      setForm({ name: "" });
-      err.autor = "Autor is required";
-      alert(err.autor);
-    }
-    return err;
-  };
+  const { updateMusic, handleSubmit, handleChange } = useHandleMusic();
 
   return (
     <center>

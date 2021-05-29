@@ -3,28 +3,14 @@ import { useRouter } from "next/router";
 import Layout from "../../../components/Layout/Layout";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
+import useHandleMusic from "../../../hooks/useHandleMusic";
 const PaypalNoSSR = dynamic(() => import("../../../components/PaypalButton"), {
   ssr: false,
 });
 
 function Music({ musica }) {
   const router = useRouter();
-
-  const deletedMusic = async () => {
-    const musicId = router.query.id;
-    try {
-      await fetch(`http://localhost:3000/api/musica/${musicId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      router.push("/musica");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { deleteMusic } = useHandleMusic();
 
   function handlePaySuccesfully() {
     router.push("/");
@@ -83,7 +69,7 @@ function Music({ musica }) {
         >
           Ver Mas Canciones
         </button>
-        <button className="btn btn-btn-danger" onClick={() => deletedMusic()}>
+        <button className="btn btn-btn-danger" onClick={() => deleteMusic()}>
           Delete Music
         </button>
       </div>
