@@ -3,13 +3,14 @@ import fetch from "isomorphic-unfetch";
 import { useState } from "react";
 
 function EditMusic({ music }) {
-  const [form, setForm] = useState({
+  const formValue = {
     album: music.album,
     name: music.name,
     autor: music.autor,
-  });
+  };
 
-  const { updateMusic, handleSubmit, handleChange } = useHandleMusic();
+  const { form, handleSubmit, handleChange, isSubmitting } =
+    useHandleMusic(formValue);
 
   return (
     <center>

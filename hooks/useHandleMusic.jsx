@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 
-const useHandleMusic = ({ music }) => {
+const useHandleMusic = (formValue) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
+  const [form, setForm] = useState(formValue);
 
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
         updateMusic();
-        console.log(form);
         //alert("Sucess");
       } else {
         setIsSubmitting(false);
@@ -34,20 +34,6 @@ const useHandleMusic = ({ music }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let errs = validate();
-    setErrors(errs);
-    setIsSubmitting(true);
-    console.log(errors);
-  };
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   const validate = () => {
     let err = {};
     if (!form.name) {
@@ -61,6 +47,20 @@ const useHandleMusic = ({ music }) => {
       alert(err.autor);
     }
     return err;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let errs = validate();
+    setErrors(errs);
+    setIsSubmitting(true);
+    console.log(errors);
+  };
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const deleteMusic = async () => {
@@ -78,7 +78,14 @@ const useHandleMusic = ({ music }) => {
     }
   };
 
-  return { deleteMusic, handleSubmit, handleChange, form, updateMusic };
+  return {
+    form,
+    deleteMusic,
+    handleSubmit,
+    handleChange,
+    updateMusic,
+    isSubmitting,
+  };
 };
 
 export default useHandleMusic;
