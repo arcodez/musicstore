@@ -1,9 +1,16 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import useCreateMusic from "../../hooks/useCreateMusic";
+import useHandleMusic from "../../hooks/useHandleMusic";
+
+const formValue = {
+  album: album,
+  name: name,
+  autor: autor,
+};
 
 function New() {
-  const { handleSubmit, handleChange, isSubmitting } = useCreateMusic();
+  const { handleSubmit, handleChange, isSubmitting, createMusic } =
+    useHandleMusic(formValue);
 
   return (
     <Layout>

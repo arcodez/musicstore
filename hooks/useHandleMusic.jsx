@@ -19,6 +19,21 @@ const useHandleMusic = (formValue) => {
     }
   }, [errors]);
 
+  const createMusic = async () => {
+    try {
+      await fetch("http://localhost:3000/api/musica/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      router.push("/musica");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const updateMusic = async () => {
     try {
       await fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
@@ -81,6 +96,7 @@ const useHandleMusic = (formValue) => {
   return {
     form,
     deleteMusic,
+    createMusic,
     handleSubmit,
     handleChange,
     updateMusic,
