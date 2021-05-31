@@ -100,6 +100,7 @@ function products({ musicas }) {
                         <a href="#" className="tm-product-delete-link">
                           <i className="far fa-trash-alt tm-product-delete-icon" />
                         </a>
+                      </td>
                     </tr>
                     <tr>
                       <td className="tm-product-name">Product Category 5</td>
