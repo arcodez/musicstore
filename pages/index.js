@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import About from "../components/About";
 import Class from "../components/Class";
 import Contact from "../components/Contact";
