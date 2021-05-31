@@ -3,9 +3,9 @@ import Layout from "../../components/Layout/Layout";
 import useHandleMusic from "../../hooks/useHandleMusic";
 
 const formValue = {
-  album: album,
-  name: name,
-  autor: autor,
+  album: "",
+  name: "",
+  autor: "",
 };
 
 function New() {
