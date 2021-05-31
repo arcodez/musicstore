@@ -4,8 +4,13 @@ import Link from "next/link";
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/musica");
+    const res = await fetch("https://musicstore-arcodez.vercel.app/api/musica");
     const { data } = await res.json();
+
+    if (!data) {
+      return console.log("Sorry we have not the info");
+    }
+
     return {
       props: { musicas: data },
     };

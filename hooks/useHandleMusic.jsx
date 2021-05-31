@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 
 const useHandleMusic = (formValue) => {
+  const baseUrl = "https://musicstore-arcodez.vercel.app/";
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -21,7 +22,7 @@ const useHandleMusic = (formValue) => {
 
   const createMusic = async () => {
     try {
-      await fetch("http://localhost:3000/api/musica/", {
+      await fetch(`${baseUrl}/api/musica/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ const useHandleMusic = (formValue) => {
 
   const updateMusic = async () => {
     try {
-      await fetch(`http://localhost:3000/api/musica/${router.query.id}`, {
+      await fetch(`${baseUrl}/api/musica/${router.query.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +82,7 @@ const useHandleMusic = (formValue) => {
   const deleteMusic = async () => {
     const musicId = router.query.id;
     try {
-      await fetch(`http://localhost:3000/api/musica/${musicId}`, {
+      await fetch(`${baseUrl}/api/musica/${musicId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

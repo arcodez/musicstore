@@ -78,7 +78,7 @@ function Music({ musica }) {
 }
 
 Music.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const res = await fetch(`https://musicstore-arcodez.vercel.app/${id}`);
   const { data } = await res.json();
   return { musica: data };
 };
