@@ -1,7 +1,16 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    mongoose.connection.on("connected", () => {
+      console.log("Connected to Mongo");
+    });
+    mongoose.connection.on("error", (err) => {
+      console.log("Error Connecting", err);
+    });
+  }, []);
   return (
     <>
       <Head>

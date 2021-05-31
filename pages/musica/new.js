@@ -12,6 +12,8 @@ function New() {
   const { handleSubmit, handleChange, isSubmitting, createMusic } =
     useHandleMusic(formValue);
 
+  console.log(process.env.BASE_URL);
+
   return (
     <Layout>
       <div className="container my-3 py-5">
