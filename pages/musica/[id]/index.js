@@ -4,6 +4,8 @@ import Layout from "../../../components/Layout/Layout";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import useHandleMusic from "../../../hooks/useHandleMusic";
+
+// No SSR Import
 const PaypalNoSSR = dynamic(() => import("../../../components/PaypalButton"), {
   ssr: false,
 });
@@ -19,23 +21,6 @@ function Music({ musica }) {
   return (
     <Layout>
       <div className="container my-5 py-5 mx-auto">
-        <div className="jumbotron">
-          <h1 className="display-4">Hello, world!</h1>
-          <p className="lead">
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
-          </p>
-          <hr className="my-4" />
-          <p>
-            It uses utility classes for typography and spacing to space content
-            out within the larger container.
-          </p>
-          <p className="lead">
-            <a className="btn btn-primary btn-lg" href="#" role="button">
-              Learn more
-            </a>
-          </p>
-        </div>
         <div className="card" style={{ width: "50%" }}>
           <img
             src="/images/hero-bg.jpg"
@@ -69,16 +54,12 @@ function Music({ musica }) {
         >
           Ver Mas Canciones
         </button>
-        <button className="btn btn-btn-danger" onClick={() => deleteMusic()}>
-          Delete Music
-        </button>
       </div>
     </Layout>
   );
 }
-
 Music.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`https://musicstore-arcodez.vercel.app/${id}`);
+  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
   const { data } = await res.json();
   return { musica: data };
 };

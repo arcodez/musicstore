@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 
-const useHandleMusic = (formValue) => {
-  const baseUrl = "https://musicstore-arcodez.vercel.app/";
+const useHandleMusic = (formValue, props) => {
+  const baseUrl = "http://localhost:3000";
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -79,8 +79,8 @@ const useHandleMusic = (formValue) => {
     });
   };
 
-  const deleteMusic = async () => {
-    const musicId = router.query.id;
+  const deleteMusic = async (musicID) => {
+    const musicId = router.query.id || musicID;
     try {
       await fetch(`${baseUrl}/api/musica/${musicId}`, {
         method: "DELETE",

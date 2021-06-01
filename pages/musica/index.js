@@ -4,13 +4,9 @@ import Link from "next/link";
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("https://musicstore-arcodez.vercel.app/api/musica");
+    const res = await fetch(`http://localhost:3000/api/musica`);
     const { data } = await res.json();
-
-    if (!data) {
-      return console.log("Sorry we have not the info");
-    }
-
+    console.log(`http://${process.env.BASE_URL}/api/musica`);
     return {
       props: { musicas: data },
     };
@@ -49,25 +45,18 @@ function canciones({ musicas }) {
                       alt="Class"
                     />
                     <div className="class-info">
-                      <h3 className="mb-1">Pinche Bad Bunny</h3>
+                      <h3 className="mb-1">{musica.name}</h3>
                       <span className="class-price">$15</span>
-                      <p className="mt-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <span>
-                        <strong>Produced by</strong> - Alejandro Portillo
-                      </span>
-                      <Link href={`/musica/${musica._id}/edit`}>
-                        <a>
-                          <button>Edit</button>
-                        </a>
-                      </Link>
-                      <a
-                        href={`/musica/${musica._id}`}
-                        className="btn btn-success"
-                      >
-                        Comprar
-                      </a>
+                      <p className="mt-3">{musica.album} </p>
+                      <center>
+                        <span>
+                          <strong>Produced by</strong> - {musica.autor}
+                        </span>
+                        <br />
+                        <Link href={`/musica/${musica._id}`}>
+                          <a className="btn btn-success">Comprar</a>
+                        </Link>
+                      </center>
                     </div>
                   </div>
                 </div>

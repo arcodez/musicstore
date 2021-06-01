@@ -93,6 +93,7 @@ function add_product() {
                 </div>
                 <div className="col-12">
                   <button
+                    onClick={router.push("/musica/new")}
                     type="submit"
                     className="btn btn-primary btn-block text-uppercase"
                   >

@@ -1,4 +1,6 @@
 import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
+import useHandleMusic from "../../hooks/useHandleMusic";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   try {
@@ -13,6 +15,7 @@ export const getStaticProps = async () => {
 };
 
 function products({ musicas }) {
+  const { deleteMusic } = useHandleMusic();
   console.log(musicas);
   return (
     <LayoutMenu>
@@ -41,11 +44,19 @@ function products({ musicas }) {
                         <td className="tm-product-name">{m.name} </td>
                         <td>1,450</td>
                         <td>550</td>
-                        <td>28 March 2019</td>
-                        <td>
-                          <a href="#" className="tm-product-delete-link">
-                            <i className="far fa-trash-alt tm-product-delete-icon" />
+                        <br />
+                        <Link href={`/menu/${m._id}/edit`}>
+                          <a>
+                            <button>Edit</button>
                           </a>
+                        </Link>
+                        <td>
+                          <button
+                            onClick={() => deleteMusic(m._id)}
+                            className="tm-product-delete-link"
+                          >
+                            <i className="far fa-trash-alt tm-product-delete-icon" />
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -54,10 +65,10 @@ function products({ musicas }) {
               </div>
               {/* table container */}
               <a
-                href="add-product.html"
+                href="/musica/new"
                 className="btn btn-primary btn-block text-uppercase mb-3"
               >
-                Add new product
+                Add new Music
               </a>
               <button className="btn btn-primary btn-block text-uppercase">
                 Delete selected products
