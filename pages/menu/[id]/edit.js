@@ -32,7 +32,7 @@ function EditMusic({ music }) {
                     placeholder="Name"
                     label="name"
                     name="name"
-                    value={music.name}
+                    value={form.name}
                     onChange={handleChange}
                   />
                   <input
@@ -40,7 +40,7 @@ function EditMusic({ music }) {
                     className="form-control"
                     placeholder="Album"
                     label="album"
-                    value={music.album}
+                    value={form.album}
                     name="album"
                     onChange={handleChange}
                   />
@@ -50,14 +50,14 @@ function EditMusic({ music }) {
                     placeholder="Autor"
                     label="autor"
                     name="autor"
-                    value={music.autor}
+                    value={form.autor}
                     onChange={handleChange}
                   />
                 </div>
                 <br />
                 <center>
                   <button type="submit" className="btn btn-danger">
-                    Update{" "}
+                    Update
                   </button>
                 </center>
               </form>

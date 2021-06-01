@@ -9,7 +9,7 @@ const formValue = {
 };
 
 function New() {
-  const { handleSubmit, handleChange, isSubmitting, createMusic } =
+  const { handleSubmit, handleChange, isSubmitting } =
     useHandleMusic(formValue);
 
   console.log(process.env.BASE_URL);
