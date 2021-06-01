@@ -1,10 +1,10 @@
-import About from "../components/About";
-import Class from "../components/Class";
-import Contact from "../components/Contact";
-import Horarios from "../components/Horarios";
 import Layout from "../components/Layout/Layout";
-import Modal from "../components/Modal";
-import Hero from "../components/Hero";
+import Hero from "../components/Inicio/Hero";
+import About from "../components/Inicio/About";
+import Class from "../components/Inicio/Class";
+import Horarios from "../components/Inicio/Horarios";
+import Contact from "../components/Inicio/Contact";
+import Modal from "../components/Inicio/Modal";
 
 export default function index() {
   return (

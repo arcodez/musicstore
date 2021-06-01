@@ -3,7 +3,6 @@ import React from "react";
 export default function Class() {
   return (
     <>
-      {/* CLASS */}
       <section className="class section" id="class">
         <div className="container">
           <div className="row">
