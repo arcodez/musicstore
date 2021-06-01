@@ -1,6 +1,7 @@
 import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
 import useHandleMusic from "../../hooks/useHandleMusic";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export const getStaticProps = async () => {
   try {
@@ -16,7 +17,6 @@ export const getStaticProps = async () => {
 
 function products({ musicas }) {
   const { deleteMusic } = useHandleMusic();
-  console.log(musicas);
   return (
     <LayoutMenu>
       <div className="container mt-5">

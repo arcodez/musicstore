@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export const getStaticProps = async () => {
   try {
@@ -16,6 +17,10 @@ export const getStaticProps = async () => {
 };
 
 function canciones({ musicas }) {
+  const [ventana, setVentana] = useState("");
+  useEffect(() => {
+    setVentana(window.location.hostname);
+  }, []);
   return (
     <Layout>
       <div className="container my-5  py-5">
@@ -25,6 +30,9 @@ function canciones({ musicas }) {
               <div className="col-lg-12 col-12 text-center mb-5">
                 <h6>Get A Perfect Song</h6>
                 <h2>My Songs</h2>
+                <Link href={ventana}>
+                  <a>Ir Al Inicio</a>
+                </Link>
               </div>
               {/* Llamar a las canciones desde la base de datos */}
               {/* Hay que remplazar los datos del map por props */}

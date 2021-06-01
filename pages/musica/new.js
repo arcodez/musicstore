@@ -3,16 +3,18 @@ import Layout from "../../components/Layout/Layout";
 import useHandleMusic from "../../hooks/useHandleMusic";
 
 const formValue = {
-  album: "",
   name: "",
   autor: "",
+  price: "",
+  album: "",
+  audioUrl: "",
+  audioUrlCompleto: "",
+  imageUrl: "",
 };
 
 function New() {
-  const { handleSubmit, handleChange, isSubmitting } =
+  const { handleSubmit, handleChange, isSubmitting, createMusic } =
     useHandleMusic(formValue);
-
-  console.log(process.env.BASE_URL);
 
   return (
     <Layout>
@@ -37,6 +39,22 @@ function New() {
                 <input
                   type="text"
                   className="form-control"
+                  placeholder="Autor"
+                  label="autor"
+                  name="autor"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Price"
+                  label="price"
+                  name="price"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  className="form-control"
                   placeholder="Album"
                   label="album"
                   name="album"
@@ -45,9 +63,25 @@ function New() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Autor"
-                  label="autor"
-                  name="autor"
+                  placeholder="Audio Url"
+                  label="audio url"
+                  name="audioUrl"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Audio Url Completo"
+                  label="Audio Completo"
+                  name="audioUrlCompleto"
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Image Url"
+                  label="Image Url"
+                  name="imageUrl"
                   onChange={handleChange}
                 />
               </div>

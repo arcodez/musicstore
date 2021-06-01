@@ -5,14 +5,22 @@ import fetch from "isomorphic-unfetch";
 const useHandleMusic = (formValue, props) => {
   const baseUrl = "http://localhost:3000";
   const router = useRouter();
+  const [ventana, setVentana] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState(formValue);
 
   useEffect(() => {
+    setVentana(window.location.href);
+  }, []);
+
+  useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
         updateMusic();
+        if (router.pathname === "/musica/new") {
+          createMusic();
+        }
         //alert("Sucess");
       } else {
         setIsSubmitting(false);
@@ -67,6 +75,7 @@ const useHandleMusic = (formValue, props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form);
     let errs = validate();
     setErrors(errs);
     setIsSubmitting(true);
@@ -88,7 +97,7 @@ const useHandleMusic = (formValue, props) => {
           "Content-Type": "application/json",
         },
       });
-      router.push("/musica");
+      router.push(ventana);
     } catch (error) {
       console.log(error);
     }
