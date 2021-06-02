@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "../../components/Input";
 import Layout from "../../components/Layout/Layout";
 import useHandleMusic from "../../hooks/useHandleMusic";
 
@@ -13,7 +14,7 @@ const formValue = {
 };
 
 function New() {
-  const { handleSubmit, handleChange, isSubmitting, createMusic } =
+  const { handleSubmit, handleChange, isSubmitting } =
     useHandleMusic(formValue);
 
   return (
@@ -28,62 +29,13 @@ function New() {
           ) : (
             <form onSubmit={handleSubmit}>
               <div className="form- group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Name"
-                  label="name"
-                  name="name"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Autor"
-                  label="autor"
-                  name="autor"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Price"
-                  label="price"
-                  name="price"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Album"
-                  label="album"
-                  name="album"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Audio Url"
-                  label="audio url"
-                  name="audioUrl"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Audio Url Completo"
-                  label="Audio Completo"
-                  name="audioUrlCompleto"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Image Url"
-                  label="Image Url"
-                  name="imageUrl"
-                  onChange={handleChange}
-                />
+                <Input name="name" change={handleChange} />
+                <Input name="autor" change={handleChange} />
+                <Input name="price" change={handleChange} />
+                <Input name="album" change={handleChange} />
+                <Input name="audioUrl" change={handleChange} />
+                <Input name="audioUrlCompleto" change={handleChange} />
+                <Input name="imageUrl" change={handleChange} />
               </div>
               <br />
               <center>

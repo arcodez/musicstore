@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { useEffect } from "react";
-import initDB from "../helpers/initDB";
 
 function MyApp({ Component, pageProps }) {
   return (

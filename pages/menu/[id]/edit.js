@@ -2,6 +2,7 @@ import useHandleMusic from "../../../hooks/useHandleMusic";
 import fetch from "isomorphic-unfetch";
 import { useState } from "react";
 import Layout from "../../../components/Layout/Layout";
+import Input from "../../../components/Input";
 
 function EditMusic({ music }) {
   const formValue = {
@@ -30,61 +31,36 @@ function EditMusic({ music }) {
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="form- group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Name"
-                    label="name"
-                    name={form.name}
-                    onChange={handleChange}
+                  <Input name="name" value={form.name} change={handleChange} />
+                  <Input
+                    name="autor"
+                    value={form.autor}
+                    change={handleChange}
                   />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Autor"
-                    label="autor"
-                    name={form.autor}
-                    onChange={handleChange}
+                  <Input
+                    name="price"
+                    value={form.price}
+                    change={handleChange}
                   />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Price"
-                    label="price"
-                    name={form.price}
-                    onChange={handleChange}
+                  <Input
+                    name="album"
+                    value={form.album}
+                    change={handleChange}
                   />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Album"
-                    label="album"
-                    name={form.album}
-                    onChange={handleChange}
+                  <Input
+                    name="audioUrl"
+                    value={form.audioUrl}
+                    change={handleChange}
                   />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Audio Url"
-                    label="audio url"
-                    name={form.audioUrl}
-                    onChange={handleChange}
+                  <Input
+                    name="audioUrlCompleto"
+                    value={form.audioUrlCompleto}
+                    change={handleChange}
                   />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Audio Url Completo"
-                    label="Audio Completo"
-                    name={form.audioUrlCompleto}
-                    onChange={handleChange}
-                  />
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Image Url"
-                    label="Image Url"
-                    name={form.imageUrl}
-                    onChange={handleChange}
+                  <Input
+                    name="imageUrl"
+                    value={form.imageUrl}
+                    change={handleChange}
                   />
                 </div>
                 <br />
