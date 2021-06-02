@@ -1,9 +1,16 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout/Layout";
-import Link from "next/link";
 import dynamic from "next/dynamic";
-import useHandleMusic from "../../../hooks/useHandleMusic";
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const musica = await res.json();
+  const { data } = musica;
+
+  return { props: { musica: data } };
+}
 
 // No SSR Import
 const PaypalNoSSR = dynamic(() => import("../../../components/PaypalButton"), {
@@ -12,7 +19,6 @@ const PaypalNoSSR = dynamic(() => import("../../../components/PaypalButton"), {
 
 function Music({ musica }) {
   const router = useRouter();
-  const { deleteMusic } = useHandleMusic();
 
   function handlePaySuccesfully() {
     router.push("/");
@@ -58,9 +64,5 @@ function Music({ musica }) {
     </Layout>
   );
 }
-Music.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
-  const { data } = await res.json();
-  return { musica: data };
-};
+
 export default Music;

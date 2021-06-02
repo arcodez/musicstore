@@ -1,8 +1,16 @@
 import useHandleMusic from "../../../hooks/useHandleMusic";
 import fetch from "isomorphic-unfetch";
-import { useState } from "react";
 import Layout from "../../../components/Layout/Layout";
 import Input from "../../../components/Input";
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const music = await res.json();
+  const { data } = music;
+
+  return { props: { music: data } };
+}
 
 function EditMusic({ music }) {
   const formValue = {
@@ -77,11 +85,5 @@ function EditMusic({ music }) {
     </Layout>
   );
 }
-
-EditMusic.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
-  const { data } = await res.json();
-  return { music: data };
-};
 
 export default EditMusic;

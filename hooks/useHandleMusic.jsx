@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
 
-const useHandleMusic = (formValue, props) => {
+const useHandleMusic = (formValue) => {
   const baseUrl = "http://localhost:3000";
   const router = useRouter();
   const [ventana, setVentana] = useState("");

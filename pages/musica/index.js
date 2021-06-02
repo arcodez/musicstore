@@ -7,7 +7,6 @@ export const getStaticProps = async () => {
   try {
     const res = await fetch(`http://localhost:3000/api/musica`);
     const { data } = await res.json();
-    console.log(`http://${process.env.BASE_URL}/api/musica`);
     return {
       props: { musicas: data },
     };
@@ -38,9 +37,9 @@ function canciones({ musicas }) {
                 >
                   <div className="class-thumb">
                     <img
-                      src="images/class/crossfit-class.jpg"
+                      src={musica.imgUrl}
                       className="img-fluid"
-                      alt="Class"
+                      alt={`Img ${musica.name}`}
                     />
                     <div className="class-info">
                       <h3 className="mb-1">{musica.name}</h3>
