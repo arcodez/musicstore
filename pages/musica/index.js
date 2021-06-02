@@ -2,10 +2,11 @@ import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { server } from "../../config/index";
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch(`http://localhost:3000/api/musica`);
+    const res = await fetch(`${server}/api/musica`);
     const { data } = await res.json();
     return {
       props: { musicas: data },

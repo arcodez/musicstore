@@ -2,10 +2,11 @@ import useHandleMusic from "../../../hooks/useHandleMusic";
 import fetch from "isomorphic-unfetch";
 import Layout from "../../../components/Layout/Layout";
 import Input from "../../../components/Input";
+import { server } from "../../../config/index";
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const res = await fetch(`${server}/api/musica/${id}`);
   const music = await res.json();
   const { data } = music;
 

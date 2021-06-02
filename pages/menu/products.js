@@ -1,10 +1,11 @@
 import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
 import useHandleMusic from "../../hooks/useHandleMusic";
 import Link from "next/link";
+import { server } from "../../config/index";
 
 export const getStaticProps = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/musica");
+    const res = await fetch(`${server}/api/musica`);
     const { data } = await res.json();
     console.log("Sucess");
     return {
@@ -63,7 +64,6 @@ function products({ musicas }) {
                   </tbody>
                 </table>
               </div>
-              {/* table container */}
               <a
                 href="/musica/new"
                 className="btn btn-primary btn-block text-uppercase mb-3"

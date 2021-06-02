@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
+import { server } from "../config/index";
 
 const useHandleMusic = (formValue) => {
-  const baseUrl = "http://localhost:3000";
   const router = useRouter();
   const [ventana, setVentana] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +30,7 @@ const useHandleMusic = (formValue) => {
 
   const createMusic = async () => {
     try {
-      await fetch(`${baseUrl}/api/musica/`, {
+      await fetch(`${server}/api/musica/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const useHandleMusic = (formValue) => {
 
   const updateMusic = async () => {
     try {
-      await fetch(`${baseUrl}/api/musica/${router.query.id}`, {
+      await fetch(`${server}/api/musica/${router.query.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const useHandleMusic = (formValue) => {
   const deleteMusic = async (musicID) => {
     const musicId = router.query.id || musicID;
     try {
-      await fetch(`${baseUrl}/api/musica/${musicId}`, {
+      await fetch(`${server}/api/musica/${musicId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

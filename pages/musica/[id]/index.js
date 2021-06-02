@@ -2,10 +2,11 @@ import React from "react";
 import { useRouter } from "next/router";
 import Layout from "../../../components/Layout/Layout";
 import dynamic from "next/dynamic";
+import { server } from "../../../config/index";
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const res = await fetch(`http://localhost:3000/api/musica/${id}`);
+  const res = await fetch(`${server}/api/musica/${id}`);
   const musica = await res.json();
   const { data } = musica;
 
