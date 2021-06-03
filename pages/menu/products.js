@@ -70,6 +70,12 @@ function products({ musicas }) {
               >
                 Add new Music
               </a>
+              <a
+                href="/musica"
+                className="btn btn-primary btn-block text-uppercase mb-3"
+              >
+                Todas las Musicas
+              </a>
               <button className="btn btn-primary btn-block text-uppercase">
                 Delete selected products
               </button>

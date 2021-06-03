@@ -2,11 +2,11 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function MenuBar() {
+export default function MenuBar(props) {
   return (
     <>
       <Head>
-        <title>Porti Music Store</title>
+        <title>{props.titulo || "Porti Music Store"}</title>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <meta
@@ -25,10 +25,6 @@ export default function MenuBar() {
         <link rel="stylesheet" href="/css/abel.css" />
         {/* MAIN css */}
         <link rel="stylesheet" href="/css/tooplate-gymso-style.css" />
-        {/*
-      Tooplate 2119 Gymso Fitness
-      https://www.tooplate.com/view/2119-gymso-fitness
-      */}
       </Head>
       {/* MENU BAR */}
       <nav className="navbar navbar-expand-lg fixed-top">

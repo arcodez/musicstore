@@ -1,15 +1,15 @@
-import React from 'react'
-import Footer from './Footer'
-import MenuBar from './MenuBar'
+import React from "react";
+import Footer from "./Footer";
+import MenuBar from "./MenuBar";
 
 function Layout({ children }) {
-    return (
-        <>
-            <MenuBar />
-                {children}
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <MenuBar />
+      {children}
+      <Footer />
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

@@ -52,7 +52,7 @@ const useHandleMusic = (formValue) => {
         },
         body: JSON.stringify(form),
       });
-      router.push("/musica");
+      router.push("/menu/products");
     } catch (error) {
       console.log(error);
     }

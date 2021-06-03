@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
 import { server } from "../../config/index";
+import Head from "next/head";
 
 export async function getServerSideProps() {
   try {
@@ -17,7 +18,7 @@ export async function getServerSideProps() {
 
 function canciones({ musicas }) {
   return (
-    <Layout>
+    <Layout titulo="Musica">
       <div className="container my-2  py-2">
         <section className="class section" id="class">
           <div className="container">
@@ -33,8 +34,8 @@ function canciones({ musicas }) {
                 >
                   <div className="class-thumb">
                     <img
-                      src={musica.imgUrl}
                       className="img-fluid"
+                      src={musica.imageUrl}
                       alt={`Img ${musica.name}`}
                     />
                     <div className="class-info">
