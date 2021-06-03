@@ -34,11 +34,6 @@ export default function Footer() {
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
         crossOrigin="anonymous"
       ></script>
-      <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossOrigin="anonymous"
-      ></script>
       <script src="/js/aos.js"></script>
       <script src="/js/smoothscroll.js"></script>
       <script src="/js/custom.js"></script>

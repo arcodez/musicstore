@@ -13,14 +13,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  let globalData = "http://localhost:3000";
-
-  appProps.pageProps = {
-    globalData,
-  };
-  return { ...appProps };
-};
-
 export default MyApp;
