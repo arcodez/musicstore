@@ -4,23 +4,19 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { server } from "../../config/index";
 
-export const getStaticProps = async () => {
+export async function getServerSideProps(context) {
   try {
-    const res = await fetch(`${server}/api/musica`);
-    const { data } = await res.json();
-    return {
-      props: { musicas: data },
-    };
+    const res = await fetch(`${server}/api/musica/`);
+    const musicas = await res.json();
+    const { data } = musicas;
+
+    return { props: { musicas: data } };
   } catch (error) {
     console.log(error);
   }
-};
+}
 
 function canciones({ musicas }) {
-  const [ventana, setVentana] = useState("");
-  useEffect(() => {
-    setVentana(window.location.hostname);
-  }, []);
   return (
     <Layout>
       <div className="container my-2  py-2">
