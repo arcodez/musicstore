@@ -1,10 +1,9 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { server } from "../../config/index";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   try {
     const res = await fetch(`${server}/api/musica/`);
     const musicas = await res.json();

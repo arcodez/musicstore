@@ -3,11 +3,11 @@ import useHandleMusic from "../../hooks/useHandleMusic";
 import Link from "next/link";
 import { server } from "../../config/index";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   try {
     const res = await fetch(`${server}/api/musica`);
-    const { data } = await res.json();
-    console.log("Sucess");
+    const musicas = await res.json();
+    const { data } = musicas;
     return {
       props: { musicas: data },
     };
