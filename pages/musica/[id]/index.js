@@ -55,12 +55,9 @@ function Music({ musica }) {
             handlePaySuccesfully={() => handlePaySuccesfully()}
           />
         </div>
-        <button
-          className="btn btn-success"
-          onClick={() => router.push("/musica")}
-        >
-          Ver Mas Canciones
-        </button>
+        <a href="/musica" className="btn btn-success">
+          Mas Canciones
+        </a>
       </div>
     </Layout>
   );

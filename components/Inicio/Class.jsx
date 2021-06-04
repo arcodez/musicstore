@@ -1,20 +1,6 @@
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from "react";
 
 export default function Class() {
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-
-  function Musicas() {
-    setLoading(true);
-    if (loading) {
-      return <p>Loading..</p>;
-    } else {
-      router.push("/musica");
-    }
-  }
-
   return (
     <>
       <section className="class section" id="class">
@@ -83,14 +69,14 @@ export default function Class() {
             </div>
           </div>
           <center>
-            <button
-              onClick={() => Musicas()}
+            <a
+              href="/musica"
+              data-toggle="modal"
               className="btn custom-btn bg-color text-center mt-4"
               style={{ width: "90% !important", margin: "auto" }}
-              data-toggle="modal"
             >
               Mas Canciones
-            </button>
+            </a>
           </center>
         </div>
       </section>
