@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
+import fetch from "isomorphic-unfetch";
 import Link from "next/link";
 import { server } from "../../config/index";
 
