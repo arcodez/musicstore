@@ -1,6 +1,10 @@
 import React from "react";
 import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
 
+export const getServerSideProps = async () => {
+  return {};
+};
+
 function report() {
   return (
     <LayoutMenu>
