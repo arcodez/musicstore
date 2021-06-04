@@ -13,6 +13,10 @@ const FacturaSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  monto: {
+    type: String,
+    required: true,
+  },
 });
 
-module.exports =  mongoose.models.Note || mongoose.model('Note', FacturaSchema);
+module.exports = mongoose.models.Note || mongoose.model("Note", FacturaSchema);
