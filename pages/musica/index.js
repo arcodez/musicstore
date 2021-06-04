@@ -1,8 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import Link from "next/link";
 import { server } from "../../config/index";
-import Head from "next/head";
 
 export async function getServerSideProps() {
   try {
