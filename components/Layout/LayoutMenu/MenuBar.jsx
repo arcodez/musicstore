@@ -79,6 +79,9 @@ export default function MenuBar() {
                     <a className="dropdown-item" href="#">
                       Yearly Report
                     </a>
+                    <a className="dropdown-item" href="/menu/report">
+                      All Reports
+                    </a>
                   </div>
                 </li>
                 <li className="nav-item">

@@ -19,12 +19,12 @@ export default function Footer() {
       </footer>
       <script src="/menu/js/jquery-3.3.1.min.js"></script>
       <script src="/menu/jquery-ui-datepicker/jquery-ui.min.js"></script>
-      <script src="menu/js/jquery-3.3.1.min.js"></script>
-      <script src="menu/js/moment.min.js"></script>
-      <script src="menu/js/Chart.min.js"></script>
-      <script src="menu/js/bootstrap.min.js"></script>
-      <script src="menu/js/tooplate-scripts.js"></script>
-      <script src="menu/js/globalChart.js" />
+      <script src="/menu/js/jquery-3.3.1.min.js"></script>
+      <script src="/menu/js/moment.min.js"></script>
+      <script src="/menu/js/Chart.min.js"></script>
+      <script src="/menu/js/bootstrap.min.js"></script>
+      <script src="/menu/js/tooplate-scripts.js"></script>
+      <script src="/menu/js/globalChart.js" />
     </>
   );
 }
