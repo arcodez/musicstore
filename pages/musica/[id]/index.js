@@ -1,7 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Layout from "../../../components/Layout/Layout";
+import Link from "next/link";
 import dynamic from "next/dynamic";
+import Layout from "../../../components/Layout/Layout";
 import { server } from "../../../config/index";
 
 export async function getServerSideProps(context) {
@@ -55,9 +56,9 @@ function Music({ musica }) {
             handlePaySuccesfully={() => handlePaySuccesfully()}
           />
         </div>
-        <a href="/musica" className="btn btn-success">
-          Mas Canciones
-        </a>
+        <Link href="/musica">
+          <a className="btn btn-success">Mas Canciones</a>
+        </Link>
       </div>
     </Layout>
   );

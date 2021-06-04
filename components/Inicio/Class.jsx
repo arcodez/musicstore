@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Class() {
   return (
@@ -69,14 +70,15 @@ export default function Class() {
             </div>
           </div>
           <center>
-            <a
-              href="/musica"
-              data-toggle="modal"
-              className="btn custom-btn bg-color text-center mt-4"
-              style={{ width: "90% !important", margin: "auto" }}
-            >
-              Mas Canciones
-            </a>
+            <Link href="/musica">
+              <a
+                data-toggle="modal"
+                className="btn custom-btn bg-color text-center mt-4"
+                style={{ width: "90% !important", margin: "auto" }}
+              >
+                Mas Canciones
+              </a>
+            </Link>
           </center>
         </div>
       </section>
