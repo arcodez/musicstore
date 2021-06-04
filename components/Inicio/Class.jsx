@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Class() {
+  const router = useRouter();
   return (
     <>
       <section className="class section" id="class">
@@ -70,15 +72,14 @@ export default function Class() {
             </div>
           </div>
           <center>
-            <Link href="/musica">
-              <a
-                className="btn custom-btn bg-color text-center mt-4"
-                style={{ width: "90% !important", margin: "auto" }}
-                data-toggle="modal"
-              >
-                Mas Canciones
-              </a>
-            </Link>
+            <button
+              onClick={() => router.push("/musica")}
+              className="btn custom-btn bg-color text-center mt-4"
+              style={{ width: "90% !important", margin: "auto" }}
+              data-toggle="modal"
+            >
+              Mas Canciones
+            </button>
           </center>
         </div>
       </section>
