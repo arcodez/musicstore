@@ -1,14 +1,28 @@
 import React from "react";
 import LayoutMenu from "../../components/Layout/LayoutMenu/LayoutMenu";
+import { server } from "../../config";
+import Link from "next/link";
 
 export const getServerSideProps = async () => {
-  return {};
+  try {
+    const res = await fetch(`${server}/api/factura`);
+    const facturas = await res.json();
+    const { data } = facturas;
+
+    return {
+      props: { facturas: data },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-function report() {
+function report({ facturas }) {
+  console.log(facturas);
   return (
     <LayoutMenu>
       <div className="container mt-5">
+        <h1 className="text-white">Facturas o Reportes</h1>
         <div className="row tm-content-row">
           <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
             <div className="tm-bg-primary-dark tm-block tm-block-products">
@@ -25,30 +39,30 @@ function report() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/*musicas.map((m) => (
-                      <tr key={m._id}>
+                    {facturas.map((f) => (
+                      <tr key={f._id}>
                         <th scope="row">
                           <input type="checkbox" />
                         </th>
-                        <td className="tm-product-name">{m.name} </td>
+                        <td className="tm-product-name">{f.productos.name} </td>
                         <td>1,450</td>
                         <td>550</td>
                         <br />
-                        <Link href={`/menu/${m._id}/edit`}>
+                        <Link href={`/menu/${f._id}/edit`}>
                           <a>
                             <button>Edit</button>
                           </a>
                         </Link>
                         <td>
                           <button
-                            onClick={() => deleteMusic(m._id)}
+                            onClick={() => deleteMusic(f._id)}
                             className="tm-product-delete-link"
                           >
                             <i className="far fa-trash-alt tm-product-delete-icon" />
                           </button>
                         </td>
                       </tr>
-                    ))*/}
+                    ))}
                   </tbody>
                 </table>
               </div>
