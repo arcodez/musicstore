@@ -1,4 +1,4 @@
-import mongoose, { models } from "mongoose";
+import mongoose from "mongoose";
 
 const MusicSchema = new mongoose.Schema({
   name: {

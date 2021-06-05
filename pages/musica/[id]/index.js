@@ -19,47 +19,81 @@ const PaypalNoSSR = dynamic(() => import("../../../components/PaypalButton"), {
   ssr: false,
 });
 
+const tiempoTranscurrido = Date.now();
+const hoy = new Date(tiempoTranscurrido);
+
 function Music({ musica }) {
   const router = useRouter();
 
+  const formFactura = {
+    fecha: hoy.toUTCString(),
+    productos: {
+      name: musica.name,
+      price: musica.price,
+    },
+  };
+
+  const createFacture = async () => {
+    try {
+      await fetch(`${server}/api/factura/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formFactura),
+      });
+      console.log(formFactura);
+      router.push("/musica");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   function handlePaySuccesfully() {
-    router.push("/");
+    createFacture();
   }
 
   return (
     <Layout>
-      <div className="container my-5 py-5 mx-auto">
-        <div className="card" style={{ width: "50%" }}>
-          <img
-            src="/images/hero-bg.jpg"
-            width="300"
-            className="card-img-top"
-            alt="Card image cap"
-          />
-          <div className="card-body text-center">
-            <h5 className="card-title">{musica.name}</h5>
-            <h5>Precio</h5>
-            <p className="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+      <center>
+        <div className="container my-5 py-5 mx-auto">
+          <div className="card" style={{ width: "50%" }}>
+            <img
+              src="/images/hero-bg.jpg"
+              width="300"
+              className="card-img-top"
+              alt="Card image cap"
+            />
+            <div className="card-body text-center">
+              <h5 className="card-title">{musica.name}</h5>
+              <h5>Precio</h5>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              
+              <a href="#" className="btn btn-primary">
+                Go somewhere
+              </a>
+            </div>
+            <audio className="mx-auto" controls src="/audio/1.mp3"></audio>
           </div>
-          <audio className="mx-auto" controls src="/audio/1.mp3"></audio>
+          <br />
+          <div style={{ width: "50%" }}>
+            {/*  <PaypalNoSSR
+              price={musica.price}
+              handlePaySuccesfully={() => handlePaySuccesfully()}
+            />
+            */}
+          </div>
+          <button onClick={() => handlePaySuccesfully()}>Pagar</button>
+          <br />
+          <br />
+          <Link href="/musica">
+            <a className="btn btn-success">Mas Canciones</a>
+          </Link>
         </div>
-        <br />
-        <div style={{ width: "50%" }}>
-          <PaypalNoSSR
-            price={musica.price}
-            handlePaySuccesfully={() => handlePaySuccesfully()}
-          />
-        </div>
-        <Link href="/musica">
-          <a className="btn btn-success">Mas Canciones</a>
-        </Link>
-      </div>
+      </center>
     </Layout>
   );
 }

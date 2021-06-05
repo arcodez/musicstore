@@ -20,13 +20,15 @@ export default async (req, res) => {
       try {
         const factura = await Factura.create(req.body);
 
-        res.staus(201).json({ sucess: true, data: factura });
+        res.status(201).json({ sucess: true, data: factura });
       } catch (error) {
+        console.log(error);
         res.status(400).json({ sucess: false });
       }
       break;
+
     default:
-      res.status(400).json({ sucess: false });
+      res.status(400).json({ sucess: false, message: "default" });
       break;
   }
 };
