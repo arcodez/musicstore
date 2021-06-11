@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Layout from "../../../components/Layout/Layout";
 import { server } from "../../../config/index";
 
+//Fetch De La Data
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const res = await fetch(`${server}/api/musica/${id}`);

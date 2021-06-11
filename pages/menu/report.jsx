@@ -48,19 +48,6 @@ function report({ facturas }) {
                         <td>1,450</td>
                         <td>550</td>
                         <br />
-                        <Link href={`/menu/${f._id}/edit`}>
-                          <a>
-                            <button>Edit</button>
-                          </a>
-                        </Link>
-                        <td>
-                          <button
-                            onClick={() => deleteMusic(f._id)}
-                            className="tm-product-delete-link"
-                          >
-                            <i className="far fa-trash-alt tm-product-delete-icon" />
-                          </button>
-                        </td>
                       </tr>
                     ))}
                   </tbody>
